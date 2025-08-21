@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects - Sophia Li</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header>
     <h1>Sophia Li</h1>
@@ -19,12 +21,65 @@
   <main>
     <section id="projects">
       <h2>Projects</h2>
-      <p><strong>Dynamic Market Valuation Tool:</strong> A compliance-focused library calculating evolving market exposure.</p>
-      <p><strong>Protein Structure Predictor:</strong> Reimplementation of rawMSA using BiLSTMs in PyTorch.</p>
-      <p><strong>Currently Exploring:</strong> Visualizing interest rate exposure with D3.js + interactive graphs.</p>
+
+      <div class="project-item">
+        <h3> Deep Learning Protein Structure Prediction (Spring 2025) </h3>
+        <p>
+          Reimplementation of rawMSA using CNN + BiLSTMs in PyTorch for protein secondary structure from raw multiple
+          sequence alignments, achieving <em>89.5% accuracy</em>.
+          Developed preprocessing pipelines to handle noisy Stockholm-format datasets.</p>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub</a>
+          <a href="#" class="project-link">Documentation</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <h3>VIX Spike Prediction</h3>
+        <<p>
+          Developed a statistical model in Python to predict volatility spikes in the VIX using historical macroeconomic
+          indicators. Conducted extensive backtesting across different market regimes and iteratively refined features
+          and volatility proxies to address noise and low initial predictive power.
+          </p>
+          <p>
+            <em>What we learned:</em> Defining a benchmark for a volatility spike is inherently difficult—thresholds are
+            inconsistent across time periods and challenging to quantify, which complicates both prediction accuracy and
+            evaluation of model performance.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-link">Jupyter Notebook</a>
+          </div>
+      </div>
+
+      <div class="project-item">
+        <h3> Crawford Lab @ Brown University (2023 – 2025)</h3>
+        <p>
+          Researched computational challenges in large human genetic datasets for the <em>mvMAPIT</em> R package.
+          Integrated a more efficient matrix-vector multiplication algorithm and built simulation scripts for testing
+          performance.
+        </p>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub</a>
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">Documentation</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <h3>Some other project...</h3>
+        <p>Collection of data science projects including exploratory data analysis, statistical modeling, and machine
+          learning applications. Projects range from financial market analysis to healthcare data insights.</p>
+        <div class="project-links">
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+
       <div class="graph" id="project-graph">[Insert animated graph here]</div>
     </section>
   </main>
-  <footer><p>&copy; 2025 Sophia Li</p></footer>
+  <footer>
+    <p>&copy; 2025 Sophia Li</p>
+  </footer>
 </body>
+
 </html>

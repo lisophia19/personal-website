@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hobbies - Sophia Li</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header>
     <h1>Sophia Li</h1>
@@ -20,12 +22,112 @@
     <section id="hobbies">
       <h2>Hobbies</h2>
       <ul>
-        <li><strong>Botanical sketching:</strong> I illustrate native plants at my garden.</li>
-        <li><strong>Interactive zines:</strong> Making small digital publications with code + collage.</li>
-        <li><strong>Trail mapping:</strong> I use open data to map less-traveled local trails for community explorers.</li>
+        <li><strong>Fitness:</strong> Always up for trying something new—these days I’m focused on strength training and Pilates.</li>
+        <li><strong>Art:</strong> I enjoy acrylic painting and graphite or ink sketching, and I’m also exploring art history to deepen my understanding.</li>
+        <li><strong>Food Adventures:</strong> I love discovering new flavors and local spots, often seeking out hidden gems off the beaten path.</li>
+        <li><strong>Reading:</strong> Currently reading *A Gentleman in Moscow* by Amor Towles, but I often reach for romance, memoir, or fantasy novels.</li>
+        <li><strong>Floral Arragements:</strong> Currently reading *A Gentleman in Moscow* by Amor Towles, but I often reach for romance, memoir, or fantasy novels.</li>
       </ul>
+
+      <h2>Random Passions</h2>
+      <ul>
+        <li><strong>F1 Race Strategy:</strong> During race season, you’ll always find me tuning in on Sundays to follow the action.</li>
+        <li><strong>Matcha:</strong> Nothing beats a great matcha drink—I’d like to think I’ve perfected the craft of making it at home.</li>
+        <li><strong>Live Music:</strong> Whether it’s a concert, festival, or DJ set, I love the energy and connection of experiencing music in person.</li>
+      </ul>
+
+      <h2>Photo Gallery</h2>
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="carousel-slide active">
+            <img src="images/hobby1.jpg" alt="Cooking" />
+            <div class="slide-caption">Cooked some fish, orzo, and salad!</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/hobby2.jpg" alt="Art" />
+            <div class="slide-caption">Bouquet I made for my little for big-little reveal</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/hobby3.jpg" alt="Food exploration" />
+            <div class="slide-caption">My Beli wrapped</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/hobby4.jpg" alt="Live Music" />
+            <div class="slide-caption">Dom Dolla/div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/hobby5.jpg" alt="F1 Racing" />
+            <div class="slide-caption">F1 race strategy book</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/hobby6.jpg" alt="Matcha" />
+            <div class="slide-caption">Homemade Strawberry Matcha</div>
+          </div>
+        </div>
+
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+
+        <div class="carousel-dots">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+      </div>
     </section>
   </main>
-  <footer><p>&copy; 2025 Sophia Li</p></footer>
+  <footer>
+    <p>&copy; 2025 Sophia Li</p>
+  </footer>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      // Show current slide
+      if (slides[index]) {
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+      }
+    }
+
+    function changeSlide(direction) {
+      currentSlideIndex += direction;
+
+      // Loop back to first slide if at end
+      if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+      }
+      // Loop to last slide if at beginning
+      if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+      }
+
+      showSlide(currentSlideIndex);
+    }
+
+    function currentSlide(index) {
+      currentSlideIndex = index - 1;
+      showSlide(currentSlideIndex);
+    }
+
+    // Auto-advance slides every 5 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+
+    // Initialize first slide
+    showSlide(0);
+  </script>
 </body>
+
 </html>
