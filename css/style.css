@@ -21,6 +21,8 @@ header {
     padding: 1.5rem;
     text-align: center;
     font-family: 'Playfair Display', serif;
+    position: relative;
+    overflow: hidden;
 }
 
 nav {
@@ -259,4 +261,218 @@ footer {
 .project-link:hover {
     background: var(--dark);
     transform: translateY(-2px);
+}
+
+.project-link.disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.project-link.disabled:hover {
+    background: #ccc;
+    transform: none;
+}
+
+/* Bunny Animation */
+.bunny-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bunny {
+    position: absolute;
+    font-size: 2rem;
+    animation: bunnyHop 8s infinite linear;
+    transform-origin: center bottom;
+}
+
+@keyframes bunnyHop {
+    0% {
+        left: -50px;
+        bottom: 20px;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    10% {
+        left: 10%;
+        bottom: 60px;
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    20% {
+        left: 20%;
+        bottom: 20px;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    30% {
+        left: 30%;
+        bottom: 60px;
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    40% {
+        left: 40%;
+        bottom: 20px;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        left: 50%;
+        bottom: 60px;
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    60% {
+        left: 60%;
+        bottom: 20px;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    70% {
+        left: 70%;
+        bottom: 60px;
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    80% {
+        left: 80%;
+        bottom: 20px;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    90% {
+        left: 90%;
+        bottom: 60px;
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    100% {
+        left: 110%;
+        bottom: 20px;
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Carrot Trail Animation */
+.carrot-trail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.carrot {
+    position: absolute;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: carrotDrop 8s infinite linear;
+    transform-origin: center;
+}
+
+.carrot:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.carrot:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.carrot:nth-child(3) {
+    animation-delay: 2.5s;
+}
+
+.carrot:nth-child(4) {
+    animation-delay: 3.5s;
+}
+
+.carrot:nth-child(5) {
+    animation-delay: 4.5s;
+}
+
+@keyframes carrotDrop {
+    0% {
+        left: 15%;
+        bottom: 80px;
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+
+    10% {
+        left: 25%;
+        bottom: 40px;
+        opacity: 1;
+        transform: scale(1) rotate(10deg);
+    }
+
+    20% {
+        left: 35%;
+        bottom: 20px;
+        opacity: 0.8;
+        transform: scale(0.9) rotate(20deg);
+    }
+
+    30% {
+        left: 45%;
+        bottom: 15px;
+        opacity: 0.6;
+        transform: scale(0.8) rotate(30deg);
+    }
+
+    40% {
+        left: 55%;
+        bottom: 10px;
+        opacity: 0.4;
+        transform: scale(0.7) rotate(40deg);
+    }
+
+    50% {
+        left: 65%;
+        bottom: 5px;
+        opacity: 0.2;
+        transform: scale(0.6) rotate(50deg);
+    }
+
+    60% {
+        left: 75%;
+        bottom: 0px;
+        opacity: 0;
+        transform: scale(0.5) rotate(60deg);
+    }
+
+    100% {
+        left: 75%;
+        bottom: 0px;
+        opacity: 0;
+        transform: scale(0.5) rotate(60deg);
+    }
+}
+
+/* Headshot Styles */
+.headshot-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.headshot {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.headshot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
