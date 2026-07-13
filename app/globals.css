@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #f3f1ee;
+  --accent: #a3b18a;
+  --dark: #3a4d39;
+  --light: #d9d9d9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-accent: var(--accent);
+  --color-dark: var(--dark);
+  --color-light: var(--light);
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--dark);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── Gradient text ─────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--dark) 20%, #6b9e5e 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section reveal ────────────────────────────────────────────── */
+@keyframes sectionReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.section-hidden {
+  opacity: 0;
+}
+.section-animate {
+  animation: sectionReveal 0.7s ease forwards;
+}
+
+/* ── Fade in up (hero stagger & general) ───────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Hero aurora blobs ─────────────────────────────────────────── */
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(40px, -30px) scale(1.08); }
+  66%       { transform: translate(-25px, 20px) scale(0.94); }
+}
+
+/* ── Headshot ring pulse ───────────────────────────────────────── */
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1.1);  opacity: 0.18; }
+  50%       { transform: scale(1.18); opacity: 0.32; }
+}
+.ring-pulse {
+  animation: ringPulse 3.5s ease-in-out infinite;
+}
+
+/* ── Hero scroll indicator ─────────────────────────────────────── */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+.animate-bounce-slow {
+  animation: bounce 1.8s ease-in-out infinite;
+}
+
+/* ── Project card hover ────────────────────────────────────────── */
+.project-card {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.project-card:hover {
+  box-shadow: 0 14px 44px rgba(58,77,57,0.14);
+}
+
+/* ── Hobby tile hover ──────────────────────────────────────────── */
+.hobby-tile {
+  background-color: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 3px solid var(--accent);
+  transition: background-color 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.hobby-tile:hover {
+  background-color: rgba(163,177,138,0.08);
+  border-left-color: var(--dark);
+  box-shadow: 0 6px 22px rgba(58,77,57,0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Skill tag ─────────────────────────────────────────────────── */
+.skill-tag {
+  background-color: rgba(163,177,138,0.18);
+  color: var(--dark);
+  border: 1px solid rgba(163,177,138,0.45);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.skill-tag:hover {
+  background-color: rgba(163,177,138,0.32);
+  border-color: var(--accent);
+}
+
+/* ── Carousel slides ───────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Flying plane ──────────────────────────────────────────────── */
+@keyframes flyAcross {
+  0%    { left: -60px;              top: 41px; transform: rotate(-8deg); }
+  12.5% { left: 12.5%;             top: 11px; transform: rotate(0deg);  }
+  25%   { left: 25%;               top: 41px; transform: rotate(8deg);  }
+  37.5% { left: 37.5%;             top: 71px; transform: rotate(0deg);  }
+  50%   { left: 50%;               top: 41px; transform: rotate(-8deg); }
+  62.5% { left: 62.5%;             top: 11px; transform: rotate(0deg);  }
+  75%   { left: 75%;               top: 41px; transform: rotate(8deg);  }
+  87.5% { left: 87.5%;             top: 71px; transform: rotate(0deg);  }
+  100%  { left: calc(100% + 60px); top: 41px; transform: rotate(-8deg); }
+}
